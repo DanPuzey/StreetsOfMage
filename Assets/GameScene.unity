@@ -85,6 +85,47 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &71612609
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 71612611}
+  - 114: {fileID: 71612610}
+  m_Layer: 0
+  m_Name: Spell2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &71612610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 71612609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53c17955f89ec0a4ab1a2c37d8c2454c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Combo: 01000000020000000400000003000000
+  ResetOnMiss: 1
+--- !u!4 &71612611
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 71612609}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1214484370}
+  m_RootOrder: 2
 --- !u!1 &635993080
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,6 +134,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 635993081}
+  - 114: {fileID: 635993083}
   m_Layer: 0
   m_Name: Wizard1
   m_TagString: Untagged
@@ -111,8 +153,67 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1214484370}
+  - {fileID: 2109581849}
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!114 &635993083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 635993080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd1ab5a50364c244befe72757c3efa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WinningCombo: {fileID: 744575673}
+  SpeedCombo: {fileID: 1254673726}
+  HealCombo: {fileID: 71612610}
+  IronBarCombo: {fileID: 0}
+  KnockBackCombo: {fileID: 0}
+  ReviveCombo: {fileID: 0}
+--- !u!1 &744575671
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 744575672}
+  - 114: {fileID: 744575673}
+  m_Layer: 0
+  m_Name: Winner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &744575672
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 744575671}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1214484370}
+  m_RootOrder: 0
+--- !u!114 &744575673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 744575671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53c17955f89ec0a4ab1a2c37d8c2454c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Combo: 04000000030000000200000001000000
+  ResetOnMiss: 1
 --- !u!1 &1214484367
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,9 +222,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1214484370}
-  - 114: {fileID: 1214484369}
-  - 114: {fileID: 1214484368}
-  - 114: {fileID: 1214484371}
   m_Layer: 0
   m_Name: Combos
   m_TagString: Untagged
@@ -131,12 +229,140 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1214484368
-MonoBehaviour:
+--- !u!4 &1214484370
+Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1214484367}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 744575672}
+  - {fileID: 1254673725}
+  - {fileID: 71612611}
+  m_Father: {fileID: 635993081}
+  m_RootOrder: 0
+--- !u!1 &1254673724
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1254673725}
+  - 114: {fileID: 1254673726}
+  m_Layer: 0
+  m_Name: Spell1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1254673725
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1254673724}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1214484370}
+  m_RootOrder: 1
+--- !u!114 &1254673726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1254673724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53c17955f89ec0a4ab1a2c37d8c2454c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Combo: 01000000020000000300000004000000
+  ResetOnMiss: 1
+--- !u!1 &1348159543
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1348159544}
+  - 114: {fileID: 1348159545}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1348159544
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1348159543}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+--- !u!114 &1348159545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1348159543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 944f38a225f79e54da6a73aff0aa9de5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RandomizeSpells: 0
+  AlphabetSize: 4
+  WinningComboSize: 10
+  Wizards:
+  - {fileID: 635993083}
+--- !u!1 &2109581848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2109581849}
+  - 114: {fileID: 2109581850}
+  m_Layer: 0
+  m_Name: Input
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2109581849
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2109581848}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 635993081}
+  m_RootOrder: 1
+--- !u!114 &2109581850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2109581848}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8894222ee05c76248826cb47915df43e, type: 3}
@@ -171,92 +397,10 @@ MonoBehaviour:
   - Name: 
     Positive: 1
   AxisDeadzone: 0.2
-  Targets: []
---- !u!114 &1214484369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1214484367}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53c17955f89ec0a4ab1a2c37d8c2454c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AlphabetSize: 8
-  Alphabet:
-  - A
-  - B
-  - X
-  - Y
-  - up
-  - down
-  - left
-  - right
-  Combo: 01000000020000000300000004000000
-  ResetOnMiss: 1
---- !u!4 &1214484370
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1214484367}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 635993081}
-  m_RootOrder: 0
---- !u!114 &1214484371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1214484367}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53c17955f89ec0a4ab1a2c37d8c2454c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AlphabetSize: 8
-  Alphabet:
-  - A
-  - B
-  - X
-  - Y
-  - up
-  - down
-  - left
-  - right
-  Combo: 01000000020000000400000003000000
-  ResetOnMiss: 1
---- !u!1 &1348159543
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1348159544}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1348159544
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1348159543}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  Targets:
+  - {fileID: 744575673}
+  - {fileID: 1254673726}
+  - {fileID: 71612610}
 --- !u!1 &2127676769
 GameObject:
   m_ObjectHideFlags: 0
