@@ -23,11 +23,13 @@ namespace WizardDuel
                     CompleteCombo();
                 }
             }
-            else
+            else if (ResetOnMiss)
             {
-                if (ResetOnMiss)
+                Reset();
+
+                if (markIndex == Combo[_currentSymbolIndex])
                 {
-                    Reset();
+                    _currentSymbolIndex++;
                 }
             }
         }
