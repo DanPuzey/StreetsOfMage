@@ -14,7 +14,7 @@ namespace WizardDuel
 
         public void AddGlyph(int markIndex)
         {
-            if (markIndex == _currentSymbolIndex)
+            if (markIndex == Combo[_currentSymbolIndex])
             {
                 _currentSymbolIndex++;
                 
