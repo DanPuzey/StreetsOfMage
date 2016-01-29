@@ -5,10 +5,6 @@ namespace WizardDuel
 {
     public class ComboMatcher : MonoBehaviour
     {
-        [Header("Combo setup")]
-        public int AlphabetSize = 8;
-        public string[] Alphabet = { "A", "B", "X", "Y", "up", "down", "left", "right" };
-
         public int[] Combo = { 1, 2, 3, 4 };
 
         [Header("Behaviour")]
