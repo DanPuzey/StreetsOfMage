@@ -23,7 +23,7 @@ namespace WizardDuel
                     CompleteCombo();
                 }
             }
-            else if (ResetOnMiss)
+            else if (ResetOnMiss && _currentSymbolIndex > 0)
             {
                 Reset();
 

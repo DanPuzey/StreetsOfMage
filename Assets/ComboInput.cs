@@ -32,12 +32,12 @@ namespace WizardDuel
         };
         public float AxisDeadzone = 0.2f;
 
-        public ComboMatcher[] Targets = new ComboMatcher[0];
+        public GameObject TargetRoot;
+        #endregion
 
         private int _controlCount;
         private string[] _buttons;
         private AxisInfo[] _axes;
-        #endregion
 
         private void Awake()
         {
@@ -95,12 +95,7 @@ namespace WizardDuel
 
         private void SendGlyph(int index)
         {
-            Debug.Log("Sending glyph");
-
-            foreach (var c in Targets)
-            {
-                c.AddGlyph(index);
-            }
+            TargetRoot.BroadcastMessage("AddGlyph", index);
         }
 
         [Serializable]
