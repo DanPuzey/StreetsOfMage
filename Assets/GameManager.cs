@@ -67,6 +67,7 @@ namespace WizardDuel
                 else
                 {
                     wiz.Animations.PlayLoseAnim();
+                    wiz.Audio.PlayDeath();
                 }
             }
         }

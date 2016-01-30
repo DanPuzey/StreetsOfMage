@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using WizardDuel.Animation;
+using WizardDuel.Audio;
 
 namespace WizardDuel
 {
@@ -9,6 +10,7 @@ namespace WizardDuel
         public ComboInput Input;
         public WizardAnimations Animations;
         public SigilAnimations Sigil;
+        public WizardAudio Audio;
 
         [Header("Combos")]
         public ComboMatcher WinningCombo;
