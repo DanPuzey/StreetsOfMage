@@ -219,6 +219,23 @@ MonoBehaviour:
   - {fileID: 21300002, guid: 7a4fd3b959e3aad48a93f92bb24c9a28, type: 3}
   - {fileID: 21300004, guid: 7a4fd3b959e3aad48a93f92bb24c9a28, type: 3}
   - {fileID: 21300006, guid: 7a4fd3b959e3aad48a93f92bb24c9a28, type: 3}
+  GlyphCastFrames:
+  - Frames:
+    - {fileID: 21300008, guid: 7a4fd3b959e3aad48a93f92bb24c9a28, type: 3}
+  - Frames:
+    - {fileID: 21300010, guid: 7a4fd3b959e3aad48a93f92bb24c9a28, type: 3}
+  - Frames:
+    - {fileID: 21300012, guid: 7a4fd3b959e3aad48a93f92bb24c9a28, type: 3}
+  - Frames:
+    - {fileID: 21300014, guid: 7a4fd3b959e3aad48a93f92bb24c9a28, type: 3}
+  - Frames:
+    - {fileID: 21300016, guid: 7a4fd3b959e3aad48a93f92bb24c9a28, type: 3}
+  - Frames:
+    - {fileID: 21300018, guid: 7a4fd3b959e3aad48a93f92bb24c9a28, type: 3}
+  - Frames:
+    - {fileID: 21300020, guid: 7a4fd3b959e3aad48a93f92bb24c9a28, type: 3}
+  - Frames:
+    - {fileID: 21300022, guid: 7a4fd3b959e3aad48a93f92bb24c9a28, type: 3}
 --- !u!114 &11423746
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -298,7 +315,7 @@ MonoBehaviour:
   - Name: Axis 6
     Positive: 1
   AxisDeadzone: 0.2
-  TargetRoot: {fileID: 170520}
+  TargetRoot: {fileID: 193418}
 --- !u!114 &11493868
 MonoBehaviour:
   m_ObjectHideFlags: 1
