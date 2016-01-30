@@ -8,12 +8,6 @@ namespace WizardDuel.Animation
     [RequireComponent(typeof(SimpleSpriteAnimator))]
     public class WizardAnimations : MonoBehaviour
     {
-        [Serializable]
-        public struct AnimFrames
-        {
-            public Sprite[] Frames;
-        }
-
         public Sprite[] IdleFrames;
         public AnimFrames[] GlyphCastFrames;
         public Sprite[] WinFrames;
@@ -35,11 +29,13 @@ namespace WizardDuel.Animation
 
         public void PlayWinAnim()
         {
+            StopAllCoroutines();
             _animator.Sprites = WinFrames;
         }
 
         public void PlayLoseAnim()
         {
+            StopAllCoroutines();
             _animator.Sprites = LoseFrames;
         }
 
