@@ -41,6 +41,8 @@ namespace WizardDuel
             
             foreach (var wiz in Wizards)
             {
+//                wiz.Input.enabled = false;
+
                 if (wiz.transform == winnerTransform)
                 {
                     wiz.Animations.PlayWinAnim();
