@@ -8,6 +8,7 @@ namespace WizardDuel
         [Header("Components")]
         public ComboInput Input;
         public WizardAnimations Animations;
+        public SigilAnimations Sigil;
 
         [Header("Combos")]
         public ComboMatcher WinningCombo;

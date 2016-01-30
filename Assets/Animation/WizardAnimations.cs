@@ -41,7 +41,7 @@ namespace WizardDuel.Animation
 
         private void AddGlyph(int markIndex)
         {
-            StartCoroutine(ShowGlyphAnim(markIndex));
+            StartCoroutine("ShowGlyphAnim", markIndex);
         }
 
         private IEnumerator ShowGlyphAnim(int index)

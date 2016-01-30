@@ -15,7 +15,63 @@ namespace WizardDuel
         public WizardPlayer[] Wizards = new WizardPlayer[0];
         public ComboDisplay WinningComboDisplay;
 
+        private int[] _wizardScores;
+
+        private void Awake()
+        {
+            _wizardScores = new int[Wizards.Length];
+        }
+
         private void Start()
+        {
+            SetNewWinningCombo();
+        }
+
+        private void PlayerWins(object sender, EventArgs e)
+        {
+            var c = sender as ComboMatcher;
+            var winnerTransform = c.transform.parent.parent;
+            var winner = winnerTransform.GetComponent<WizardPlayer>();
+
+            var index = Array.IndexOf(Wizards, winner);
+            _wizardScores[index] += 1;
+
+            if (_wizardScores[index] < 4)
+            {
+                winner.Sigil.SetStage(_wizardScores[index]);
+                SetNewWinningCombo();
+            }
+            else
+            {
+                SetVictor(winner);
+            }
+        }
+
+        private void SpellCast(object sender, EventArgs e)
+        {
+            var c = sender as ComboMatcher;
+            var w = c.transform.parent.parent;
+            Debug.LogFormat("{0} casts spell", w.name);
+        }
+
+        private void SetVictor(WizardPlayer victor)
+        {
+            foreach (var wiz in Wizards)
+            {
+                wiz.Input.enabled = false;
+            
+                if (wiz == victor)
+                {
+                    wiz.Animations.PlayWinAnim();
+                }
+                else
+                {
+                    wiz.Animations.PlayLoseAnim();
+                }
+            }
+        }
+
+        private void SetNewWinningCombo()
         {
             var winningCombo = new int[WinningComboSize];
 
@@ -32,33 +88,6 @@ namespace WizardDuel
 
             WinningComboDisplay.Combo = winningCombo;
             WinningComboDisplay.DrawCombo();
-        }
-
-        private void PlayerWins(object sender, EventArgs e)
-        {
-            var c = sender as ComboMatcher;
-            var winnerTransform = c.transform.parent.parent;
-            
-            foreach (var wiz in Wizards)
-            {
-//                wiz.Input.enabled = false;
-
-                if (wiz.transform == winnerTransform)
-                {
-                    wiz.Animations.PlayWinAnim();
-                }
-                else
-                {
-                    wiz.Animations.PlayLoseAnim();
-                }
-            }
-        }
-
-        private void SpellCast(object sender, EventArgs e)
-        {
-            var c = sender as ComboMatcher;
-            var w = c.transform.parent.parent;
-            Debug.LogFormat("{0} casts spell", w.name);
         }
     }
 }

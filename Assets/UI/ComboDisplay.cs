@@ -10,6 +10,11 @@ namespace WizardDuel.UI
 
         public void DrawCombo()
         {
+            foreach (Transform c in transform)
+            {
+                Destroy(c.gameObject);
+            }
+
             for (var i = 0; i < Combo.Length; i++)
             {
                 var glyphIndex = Combo[i];

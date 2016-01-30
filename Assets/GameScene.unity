@@ -1853,6 +1853,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300018, guid: 7a4fd3b959e3aad48a93f92bb24c9a28,
         type: 3}
+    - target: {fileID: 11496844, guid: 0fadac84c134a424192fe176661ee1bb, type: 2}
+      propertyPath: Sigil
+      value: 
+      objectReference: {fileID: 1506385475}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0fadac84c134a424192fe176661ee1bb, type: 2}
   m_IsPrefabParent: 0
@@ -2201,7 +2205,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 721246439
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1974bcec4290fa2439b3817515d6bbe5, type: 3}
+  m_Sprite: {fileID: 21300004, guid: 1974bcec4290fa2439b3817515d6bbe5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2433,6 +2437,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300018, guid: 1751277aae052014799e13d02713939c,
         type: 3}
+    - target: {fileID: 11496844, guid: 0fadac84c134a424192fe176661ee1bb, type: 2}
+      propertyPath: Sigil
+      value: 
+      objectReference: {fileID: 577388838}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0fadac84c134a424192fe176661ee1bb, type: 2}
   m_IsPrefabParent: 0
