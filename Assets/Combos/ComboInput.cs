@@ -72,22 +72,31 @@ namespace WizardDuel
 
                 AxisInfo axis = _axes[i];
 
-                if (axis != null)
+                if (axis != null && !string.IsNullOrEmpty(axis.Name))
                 {
                     var axisValue = Input.GetAxis(axis.Name);
 
                     if (Mathf.Abs(axisValue) > AxisDeadzone)
                     {
-                        if (axis.Positive && axisValue > 0)
+                        if (!axis.IsPressed)
                         {
-                            SendGlyph(i);
-                            return;
+                            if (axis.Positive && axisValue > 0)
+                            {
+                                SendGlyph(i);
+                                axis.IsPressed = true;
+                                return;
+                            }
+                            else if (!axis.Positive && axisValue < 0)
+                            {
+                                SendGlyph(i);
+                                axis.IsPressed = true;
+                                return;
+                            }
                         }
-                        else if (!axis.Positive && axisValue < 0)
-                        {
-                            SendGlyph(i);
-                            return;
-                        }
+                    }
+                    else
+                    {
+                        axis.IsPressed = false;
                     }
                 }
             }
@@ -109,6 +118,8 @@ namespace WizardDuel
                 Name = name;
                 Positive = positive;
             }
+
+            public bool IsPressed { get; set; }
         }
     }
 }
