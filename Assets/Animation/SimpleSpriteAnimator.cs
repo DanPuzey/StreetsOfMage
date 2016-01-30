@@ -17,6 +17,8 @@ namespace WizardDuel.Animation
 
         private void Update()
         {
+            if (Sprites.Length == 0) return;
+
             int elapsedFrames = (int)(Time.time * FramesPerSecond);
             int currentFrame = elapsedFrames % Sprites.Length;
             _renderer.sprite = Sprites[currentFrame];
