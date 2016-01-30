@@ -210,7 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ButtonPrefix: 'joystick 1 '
-  AxisPrefix: 'Joy 1 '
+  AxisPrefix: 'Joy1 '
   InputButtons:
   - button 0
   - button 1
@@ -229,15 +229,15 @@ MonoBehaviour:
     Positive: 0
   - Name: 
     Positive: 0
-  - Name: 
+  - Name: Axis 5
     Positive: 1
-  - Name: 
+  - Name: Axis 5
     Positive: 0
-  - Name: 
+  - Name: Axis 6
     Positive: 0
-  - Name: 
+  - Name: Axis 6
     Positive: 1
-  AxisDeadzone: 0.2
+  AxisDeadzone: .200000003
   TargetRoot: {fileID: 170520}
 --- !u!114 &11493868
 MonoBehaviour:
