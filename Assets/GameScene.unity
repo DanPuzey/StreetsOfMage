@@ -171,6 +171,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1279643156}
   m_RootOrder: 0
+--- !u!114 &376138174 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11407990, guid: 0fadac84c134a424192fe176661ee1bb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1694208512}
+  m_Script: {fileID: 11500000, guid: b00b48afd0110064f8d6c7c02ea7cc8f, type: 3}
 --- !u!1001 &396297863
 Prefab:
   m_ObjectHideFlags: 0
@@ -178,6 +184,14 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1443256713}
     m_Modifications:
+    - target: {fileID: 11407990, guid: 0fadac84c134a424192fe176661ee1bb, type: 2}
+      propertyPath: WinFrames.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11407990, guid: 0fadac84c134a424192fe176661ee1bb, type: 2}
+      propertyPath: LoseFrames.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 11407990, guid: 0fadac84c134a424192fe176661ee1bb, type: 2}
       propertyPath: GlyphCastFrames.Array.size
       value: 8
@@ -298,6 +312,29 @@ Prefab:
       propertyPath: ButtonPrefix
       value: 'joystick 1 '
       objectReference: {fileID: 0}
+    - target: {fileID: 11496844, guid: 0fadac84c134a424192fe176661ee1bb, type: 2}
+      propertyPath: Input
+      value: 
+      objectReference: {fileID: 1091524881}
+    - target: {fileID: 11496844, guid: 0fadac84c134a424192fe176661ee1bb, type: 2}
+      propertyPath: Animations
+      value: 
+      objectReference: {fileID: 1123449163}
+    - target: {fileID: 11407990, guid: 0fadac84c134a424192fe176661ee1bb, type: 2}
+      propertyPath: WinFrames.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300020, guid: 7a4fd3b959e3aad48a93f92bb24c9a28,
+        type: 3}
+    - target: {fileID: 11407990, guid: 0fadac84c134a424192fe176661ee1bb, type: 2}
+      propertyPath: WinFrames.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300022, guid: 7a4fd3b959e3aad48a93f92bb24c9a28,
+        type: 3}
+    - target: {fileID: 11407990, guid: 0fadac84c134a424192fe176661ee1bb, type: 2}
+      propertyPath: LoseFrames.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300018, guid: 7a4fd3b959e3aad48a93f92bb24c9a28,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0fadac84c134a424192fe176661ee1bb, type: 2}
   m_IsPrefabParent: 0
@@ -361,12 +398,30 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 447416381}
   m_Script: {fileID: 11500000, guid: 730c10239e7605d42b62304b74e1c76e, type: 3}
+--- !u!114 &613338496 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11467526, guid: 0fadac84c134a424192fe176661ee1bb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1694208512}
+  m_Script: {fileID: 11500000, guid: 8894222ee05c76248826cb47915df43e, type: 3}
 --- !u!114 &635993083 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11496844, guid: 0fadac84c134a424192fe176661ee1bb,
     type: 2}
   m_PrefabInternal: {fileID: 396297863}
   m_Script: {fileID: 11500000, guid: acd1ab5a50364c244befe72757c3efa3, type: 3}
+--- !u!114 &1091524881 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11467526, guid: 0fadac84c134a424192fe176661ee1bb,
+    type: 2}
+  m_PrefabInternal: {fileID: 396297863}
+  m_Script: {fileID: 11500000, guid: 8894222ee05c76248826cb47915df43e, type: 3}
+--- !u!114 &1123449163 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11407990, guid: 0fadac84c134a424192fe176661ee1bb,
+    type: 2}
+  m_PrefabInternal: {fileID: 396297863}
+  m_Script: {fileID: 11500000, guid: b00b48afd0110064f8d6c7c02ea7cc8f, type: 3}
 --- !u!114 &1256358400 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11496844, guid: 0fadac84c134a424192fe176661ee1bb,
@@ -484,8 +539,16 @@ Prefab:
     m_TransformParent: {fileID: 1443256713}
     m_Modifications:
     - target: {fileID: 11407990, guid: 0fadac84c134a424192fe176661ee1bb, type: 2}
+      propertyPath: WinFrames.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11407990, guid: 0fadac84c134a424192fe176661ee1bb, type: 2}
       propertyPath: IdleFrames.Array.size
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11407990, guid: 0fadac84c134a424192fe176661ee1bb, type: 2}
+      propertyPath: LoseFrames.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11407990, guid: 0fadac84c134a424192fe176661ee1bb, type: 2}
       propertyPath: GlyphCastFrames.Array.size
@@ -641,6 +704,29 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11496844, guid: 0fadac84c134a424192fe176661ee1bb, type: 2}
+      propertyPath: Input
+      value: 
+      objectReference: {fileID: 613338496}
+    - target: {fileID: 11496844, guid: 0fadac84c134a424192fe176661ee1bb, type: 2}
+      propertyPath: Animations
+      value: 
+      objectReference: {fileID: 376138174}
+    - target: {fileID: 11407990, guid: 0fadac84c134a424192fe176661ee1bb, type: 2}
+      propertyPath: WinFrames.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300020, guid: 1751277aae052014799e13d02713939c,
+        type: 3}
+    - target: {fileID: 11407990, guid: 0fadac84c134a424192fe176661ee1bb, type: 2}
+      propertyPath: WinFrames.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300022, guid: 1751277aae052014799e13d02713939c,
+        type: 3}
+    - target: {fileID: 11407990, guid: 0fadac84c134a424192fe176661ee1bb, type: 2}
+      propertyPath: LoseFrames.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300018, guid: 1751277aae052014799e13d02713939c,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0fadac84c134a424192fe176661ee1bb, type: 2}
   m_IsPrefabParent: 0

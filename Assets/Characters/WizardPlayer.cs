@@ -1,9 +1,15 @@
 ﻿using UnityEngine;
+using WizardDuel.Animation;
 
 namespace WizardDuel
 {
     public class WizardPlayer : MonoBehaviour
     {
+        [Header("Components")]
+        public ComboInput Input;
+        public WizardAnimations Animations;
+
+        [Header("Combos")]
         public ComboMatcher WinningCombo;
 
         public ComboMatcher SpeedCombo;

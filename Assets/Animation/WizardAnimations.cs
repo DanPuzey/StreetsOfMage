@@ -16,9 +16,12 @@ namespace WizardDuel.Animation
 
         public Sprite[] IdleFrames;
         public AnimFrames[] GlyphCastFrames;
+        public Sprite[] WinFrames;
+        public Sprite[] LoseFrames;
 
         private SimpleSpriteAnimator _animator;
 
+        #region MonoBehaviour methods
         private void Awake()
         {
             _animator = GetComponent<SimpleSpriteAnimator>();
@@ -27,6 +30,17 @@ namespace WizardDuel.Animation
         private void Start()
         {
             _animator.Sprites = IdleFrames;
+        } 
+        #endregion
+
+        public void PlayWinAnim()
+        {
+            _animator.Sprites = WinFrames;
+        }
+
+        public void PlayLoseAnim()
+        {
+            _animator.Sprites = LoseFrames;
         }
 
         private void AddGlyph(int markIndex)

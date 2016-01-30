@@ -15,18 +15,8 @@ namespace WizardDuel
         public WizardPlayer[] Wizards = new WizardPlayer[0];
         public ComboDisplay WinningComboDisplay;
 
-        private void Awake()
-        {
-            // wire up event handlers
-            foreach (var w in Wizards)
-            {
-                w.WinningCombo.ComboCompleted += PlayerWins;
-            }
-        }
-
         private void Start()
         {
-            // randomise combos
             var winningCombo = new int[WinningComboSize];
 
             for (var i = 0; i < WinningComboSize; i++)
@@ -37,6 +27,7 @@ namespace WizardDuel
             foreach (var w in Wizards)
             {
                 w.WinningCombo.Combo = winningCombo;
+                w.WinningCombo.ComboCompleted += PlayerWins;
             }
 
             WinningComboDisplay.Combo = winningCombo;
@@ -46,8 +37,19 @@ namespace WizardDuel
         private void PlayerWins(object sender, EventArgs e)
         {
             var c = sender as ComboMatcher;
-            var w = c.transform.parent.parent;
-            Debug.LogFormat("WINNER! {0}", w.name);
+            var winnerTransform = c.transform.parent.parent;
+            
+            foreach (var wiz in Wizards)
+            {
+                if (wiz.transform == winnerTransform)
+                {
+                    wiz.Animations.PlayWinAnim();
+                }
+                else
+                {
+                    wiz.Animations.PlayLoseAnim();
+                }
+            }
         }
 
         private void SpellCast(object sender, EventArgs e)
