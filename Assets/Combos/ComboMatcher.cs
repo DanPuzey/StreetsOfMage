@@ -37,7 +37,6 @@ namespace WizardDuel
         public void Reset()
         {
             _currentSymbolIndex = 0;
-            Debug.Log("Combo reset");
         }
 
         private void CompleteCombo()
