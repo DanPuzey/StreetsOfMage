@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using WizardDuel.UI;
 
 namespace WizardDuel
 {
@@ -12,6 +13,7 @@ namespace WizardDuel
 
         [Header("Component references")]
         public WizardPlayer[] Wizards = new WizardPlayer[0];
+        public ComboDisplay WinningComboDisplay;
 
         private void Awake()
         {
@@ -36,6 +38,9 @@ namespace WizardDuel
             {
                 w.WinningCombo.Combo = winningCombo;
             }
+
+            WinningComboDisplay.Combo = winningCombo;
+            WinningComboDisplay.DrawCombo();
         }
 
         private void PlayerWins(object sender, EventArgs e)
