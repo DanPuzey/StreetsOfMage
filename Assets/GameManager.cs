@@ -9,7 +9,8 @@ namespace WizardDuel
         [Header("Game settings")]
         public bool RandomizeSpells = false;
         public int AlphabetSize = 4;
-        public int WinningComboSize = 10;
+        public int WinningComboMinSize = 6;
+        public int WinningComboMaxSize = 16;
 
         [Header("Component references")]
         public WizardPlayer[] Wizards = new WizardPlayer[0];
@@ -85,9 +86,10 @@ namespace WizardDuel
 
         private void SetNewWinningCombo()
         {
-            var winningCombo = new int[WinningComboSize];
+            var comboSize = UnityEngine.Random.Range(WinningComboMinSize, WinningComboMaxSize);
+            var winningCombo = new int[comboSize];
 
-            for (var i = 0; i < WinningComboSize; i++)
+            for (var i = 0; i < comboSize; i++)
             {
                 winningCombo[i] = UnityEngine.Random.Range(0, AlphabetSize);
             }
