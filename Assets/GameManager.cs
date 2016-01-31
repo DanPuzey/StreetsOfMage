@@ -14,6 +14,7 @@ namespace WizardDuel
         [Header("Component references")]
         public WizardPlayer[] Wizards = new WizardPlayer[0];
         public ComboDisplay WinningComboDisplay;
+        public AudioSource MusicAudio;
 
         private int[] _wizardScores;
 
@@ -76,6 +77,8 @@ namespace WizardDuel
                     wiz.Sigil.SetStage(0);
                 }
             }
+
+            MusicAudio.Stop();
         }
 
         private void SetNewWinningCombo()
