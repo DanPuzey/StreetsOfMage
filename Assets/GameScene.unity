@@ -882,7 +882,6 @@ GameObject:
   - 4: {fileID: 1312649154}
   - 212: {fileID: 1312649155}
   - 114: {fileID: 1312649156}
-  - 82: {fileID: 1312649157}
   m_Layer: 0
   m_Name: TitleScreen
   m_TagString: Untagged
@@ -948,20 +947,103 @@ MonoBehaviour:
   - {fileID: 1312649155}
   Prompts:
   - {fileID: 537286374}
+  Audio: {fileID: 1428580474}
   FadeTime: 1
---- !u!82 &1312649157
+  AudioFadeTime: 2
+--- !u!1 &1348159543
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1348159544}
+  - 114: {fileID: 1348159545}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1348159544
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1348159543}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+--- !u!114 &1348159545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1348159543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 944f38a225f79e54da6a73aff0aa9de5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RandomizeSpells: 0
+  AlphabetSize: 8
+  WinningComboMinSize: 6
+  WinningComboMaxSize: 16
+  EndGamePauseDuration: 15
+  Wizards:
+  - {fileID: 635993083}
+  - {fileID: 1256358400}
+  WinningComboDisplay: {fileID: 447416383}
+  MusicAudio: {fileID: 1246754829}
+  EndGameSound: {fileID: 370808194}
+  SectionWinSound: {fileID: 378038743}
+  Countdown: {fileID: 1060447235}
+  ReadyScreen: {fileID: 1312649156}
+--- !u!1 &1428580472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1428580473}
+  - 82: {fileID: 1428580474}
+  m_Layer: 0
+  m_Name: IntroScreen
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1428580473
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1428580472}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2012756679}
+  m_RootOrder: 3
+--- !u!82 &1428580474
 AudioSource:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1312649153}
+  m_GameObject: {fileID: 1428580472}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24384274, guid: 2f28abed012b8d64dbe91211070efb1d,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 07eef0932c092af43acc0718a6a0a799, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.79
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1024,59 +1106,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!1 &1348159543
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1348159544}
-  - 114: {fileID: 1348159545}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1348159544
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1348159543}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
---- !u!114 &1348159545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1348159543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 944f38a225f79e54da6a73aff0aa9de5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RandomizeSpells: 0
-  AlphabetSize: 8
-  WinningComboMinSize: 6
-  WinningComboMaxSize: 16
-  EndGamePauseDuration: 15
-  Wizards:
-  - {fileID: 635993083}
-  - {fileID: 1256358400}
-  WinningComboDisplay: {fileID: 447416383}
-  MusicAudio: {fileID: 1246754829}
-  EndGameSound: {fileID: 370808194}
-  SectionWinSound: {fileID: 378038743}
-  Countdown: {fileID: 1060447235}
-  ReadyScreen: {fileID: 1312649156}
 --- !u!1 &1443256712
 GameObject:
   m_ObjectHideFlags: 0
@@ -1138,6 +1167,7 @@ Transform:
   - {fileID: 1246754830}
   - {fileID: 370808193}
   - {fileID: 378038742}
+  - {fileID: 1428580473}
   m_Father: {fileID: 0}
   m_RootOrder: 5
 --- !u!1 &2127676769

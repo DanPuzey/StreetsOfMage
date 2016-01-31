@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace WizardDuel.UI
@@ -7,16 +8,20 @@ namespace WizardDuel.UI
     {
         public SpriteRenderer[] TitleRenderers;
         public GameObject[] Prompts;
+        public AudioSource Audio;
 
         public float FadeTime = 2f;
+        public float AudioFadeTime = 2f;
 
         private bool _waitingForKey = false;
         private float _alpha;
+        private float _audioInitialVolume;
         private bool _isFading;
 
         private void Awake()
         {
             gameObject.SetActive(false);
+            _audioInitialVolume = Audio.volume;
         }
 
         private void Update()
@@ -35,6 +40,9 @@ namespace WizardDuel.UI
         public void Show()
         {
             gameObject.SetActive(true);
+
+            Audio.volume = 1;
+            Audio.Play();
 
             _waitingForKey = true;
             StartFade(true);
@@ -68,7 +76,7 @@ namespace WizardDuel.UI
                     if (Readied != null)
                     {
                         Readied(this, EventArgs.Empty);
-                        gameObject.SetActive(false);
+                        StartCoroutine(FadeAudio());
                     }
                 }
                 else if (_alpha > 1)
@@ -83,6 +91,22 @@ namespace WizardDuel.UI
                     r.color = color;
                 }
             }
+        }
+
+        private IEnumerator FadeAudio()
+        {
+            var startTime = Time.time;
+            var endTime = startTime + AudioFadeTime;
+
+            while (Time.time < endTime)
+            {
+                var delta = Time.time - startTime;
+                var normalisedVolume = (AudioFadeTime - delta) / AudioFadeTime;
+                Audio.volume = normalisedVolume * _audioInitialVolume;
+                yield return null;
+            }
+
+            Audio.volume = 0;
         }
 
         private void SetPromptsEnabled(bool enabled)
