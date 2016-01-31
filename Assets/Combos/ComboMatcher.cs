@@ -47,8 +47,6 @@ namespace WizardDuel
 
         private void CompleteCombo()
         {
-            Debug.LogFormat("Combo {0} complete!", this.name);
-
             if (ComboCompleted != null)
             {
                 ComboCompleted(this, EventArgs.Empty);
