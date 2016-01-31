@@ -16,12 +16,6 @@ namespace WizardDuel
         [Header("Combos")]
         public ComboMatcher WinningCombo;
 
-        public ComboMatcher SpeedCombo;
-        public ComboMatcher HealCombo;
-        public ComboMatcher IronBarCombo;
-        public ComboMatcher KnockBackCombo;
-        public ComboMatcher ReviveCombo;
-
         private void Awake()
         {
             Lightning.enabled = false;
