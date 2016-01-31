@@ -32,6 +32,9 @@ namespace WizardDuel
             foreach (var w in Wizards)
             {
                 w.WinningCombo.ComboCompleted += PlayerScores;
+
+                var wiz = w;
+                wiz.Bolt.HitOpponent += (s, e) => HitOpponentOf(wiz);
             }
 
             Countdown.Completed += CountdownCompleted;
@@ -173,6 +176,17 @@ namespace WizardDuel
             foreach (var w in Wizards)
             {
                 w.Input.enabled = enabled;
+            }
+        }
+
+        private void HitOpponentOf(WizardPlayer hitter)
+        {
+            foreach (var w in Wizards)
+            {
+                if (w == hitter) continue;
+
+                w.Animations.PlayDamageAnim();
+                w.Audio.PlayPain();
             }
         }
     }

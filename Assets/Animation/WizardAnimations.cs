@@ -53,7 +53,7 @@ namespace WizardDuel.Animation
         public void PlayDamageAnim()
         {
             StopAllCoroutines();
-            ShowTemporaryAnim(TakeDamageFrames);
+            StartCoroutine("ShowTemporaryAnim", TakeDamageFrames);
         }
 
         public void StartIdle()
