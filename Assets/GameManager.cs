@@ -35,14 +35,21 @@ namespace WizardDuel
 
         private void Start()
         {
+            BeginCountdown();
+        }
+
+        private void BeginCountdown()
+        {
             Countdown.StartCountdown();
             SetWizardInputEnabled(false);
+            MusicAudio.Stop();
         }
 
         private void CountdownCompleted(object sender, EventArgs e)
         {
             SetNewWinningCombo();
             SetWizardInputEnabled(true);
+            MusicAudio.Play();
         }
 
         private void PlayerWins(object sender, EventArgs e)
