@@ -20,6 +20,11 @@ namespace WizardDuel
         private void Awake()
         {
             _wizardScores = new int[Wizards.Length];
+
+            foreach (var w in Wizards)
+            {
+                w.WinningCombo.ComboCompleted += PlayerWins;
+            }
         }
 
         private void Start()
@@ -68,6 +73,7 @@ namespace WizardDuel
                 {
                     wiz.Animations.PlayLoseAnim();
                     wiz.Audio.PlayDeath();
+                    wiz.Sigil.SetStage(0);
                 }
             }
         }
@@ -84,7 +90,6 @@ namespace WizardDuel
             foreach (var w in Wizards)
             {
                 w.WinningCombo.Combo = winningCombo;
-                w.WinningCombo.ComboCompleted += PlayerWins;
             }
 
             WinningComboDisplay.Combo = winningCombo;
