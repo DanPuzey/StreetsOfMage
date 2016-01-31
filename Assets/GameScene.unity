@@ -128,6 +128,10 @@ Prefab:
       propertyPath: OpponentBolt
       value: 
       objectReference: {fileID: 1312346799}
+    - target: {fileID: 11438866, guid: 494f3e5cd99167d4b9f5f890ee59e599, type: 2}
+      propertyPath: Opponent
+      value: 
+      objectReference: {fileID: 635993083}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 494f3e5cd99167d4b9f5f890ee59e599, type: 2}
   m_IsPrefabParent: 0
@@ -883,6 +887,10 @@ Prefab:
       propertyPath: OpponentBolt
       value: 
       objectReference: {fileID: 1165766036}
+    - target: {fileID: 11430972, guid: 7b1a97b48e573b84b83b91f6dcc663d7, type: 2}
+      propertyPath: Opponent
+      value: 
+      objectReference: {fileID: 1256358400}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7b1a97b48e573b84b83b91f6dcc663d7, type: 2}
   m_IsPrefabParent: 0

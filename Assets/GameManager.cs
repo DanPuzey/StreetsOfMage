@@ -67,6 +67,7 @@ namespace WizardDuel
             {
                 w.gameObject.SetActive(true);
                 w.Levitation.StartAnimation();
+                w.Bolt.CurrentAmmo = w.Bolt.InitialAmmo; // TODO: filthy!
             }
 
             Countdown.StartCountdown();

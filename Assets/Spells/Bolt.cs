@@ -15,7 +15,12 @@ namespace WizardDuel.Spells
         public AudioClip HitShieldSound;
         public AudioClip HitOpponentSound;
 
+        public WizardPlayer Opponent;
+
         public bool OpponentIsShielded;
+
+        public int InitialAmmo = 2;
+        public int CurrentAmmo;
 
         private SpriteRenderer _renderer;
 
@@ -27,6 +32,9 @@ namespace WizardDuel.Spells
 
         public void Fire()
         {
+            if (CurrentAmmo <= 0) return;
+
+            CurrentAmmo -= 1;
             gameObject.SetActive(true);
             StartCoroutine(ShootBolt());
         }
@@ -58,6 +66,8 @@ namespace WizardDuel.Spells
             {
                 TargetAudio.clip = HitOpponentSound;
                 TargetAudio.Play();
+
+                Opponent.HitBySpell();
 
                 if (HitOpponent != null) HitOpponent(this, EventArgs.Empty);
             }

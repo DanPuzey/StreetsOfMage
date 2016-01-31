@@ -15,7 +15,7 @@ namespace WizardDuel
         public void SetCombo(int[] combo)
         {
             _combo = combo;
-            Reset();
+            ResetCombo();
         }
 
         public void AddGlyph(int markIndex)
@@ -31,7 +31,7 @@ namespace WizardDuel
             }
             else if (ResetOnMiss && _currentSymbolIndex > 0)
             {
-                Reset();
+                ResetCombo();
 
                 if (markIndex == _combo[_currentSymbolIndex])
                 {
@@ -40,8 +40,9 @@ namespace WizardDuel
             }
         }
 
-        public void Reset()
+        private void ResetCombo()
         {
+            Debug.Log("COMBO RESET");
             _currentSymbolIndex = 0;
         }
 

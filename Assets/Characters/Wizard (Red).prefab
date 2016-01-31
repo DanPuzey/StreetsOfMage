@@ -736,7 +736,10 @@ MonoBehaviour:
   TargetAudio: {fileID: 8226602}
   HitShieldSound: {fileID: 8300000, guid: 1e8ce0f81ffed2047bfd5f3efa1eec5e, type: 3}
   HitOpponentSound: {fileID: 8300000, guid: ab9244a7fed4b9049b1119b519189c62, type: 3}
+  Opponent: {fileID: 0}
   OpponentIsShielded: 0
+  InitialAmmo: 2
+  CurrentAmmo: 0
 --- !u!114 &11431040
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -756,6 +759,7 @@ MonoBehaviour:
   Levitation: {fileID: 11495838}
   Bolt: {fileID: 11430972}
   WinningCombo: {fileID: 11494688}
+  HitEffectDuration: 0.5
 --- !u!114 &11442954
 MonoBehaviour:
   m_ObjectHideFlags: 1

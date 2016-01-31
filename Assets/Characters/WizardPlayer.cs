@@ -19,9 +19,24 @@ namespace WizardDuel
         [Header("Combos")]
         public ComboMatcher WinningCombo;
 
+        [Header("Settings")]
+        public float HitEffectDuration = 0.5f;
+
         private void Awake()
         {
             Lightning.enabled = false;
+        }
+
+        public void HitBySpell()
+        {
+            BroadcastMessage("ResetCombo");
+            Input.enabled = false;
+            Invoke("EnableInput", HitEffectDuration);
+        }
+
+        private void EnableInput()
+        {
+            Input.enabled = true;
         }
     }
 }
