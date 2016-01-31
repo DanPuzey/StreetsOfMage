@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 1751277aae052014799e13d02713939c
-timeCreated: 1454172869
+timeCreated: 1454250007
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
@@ -16,6 +16,7 @@ TextureImporter:
     21300018: WizardBlue_Sheet_9
     21300020: WizardBlue_Sheet_10
     21300022: WizardBlue_Sheet_11
+    21300024: WizardBlue_Sheet_12
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -317,6 +318,22 @@ TextureImporter:
         - {x: 52, y: 46}
         - {x: -4, y: 46}
         - {x: -56, y: 42}
+    - name: WizardBlue_Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35, y: 59}
+        - {x: -35, y: -43}
+        - {x: 39, y: -43}
+        - {x: 39, y: 39}
+        - {x: 23, y: 59}
     outline: []
   spritePackingTag: 
   userData: 
