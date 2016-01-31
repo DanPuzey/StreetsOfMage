@@ -7,9 +7,11 @@ namespace WizardDuel.Animation
     {
         public Sprite[] Sprites;
         public int FramesPerSecond = 4;
-        public bool Repeat = true;
+        public bool RepeatIndefinely = true;
+        public int RepeatLimit = 1;
 
         private SpriteRenderer _renderer;
+        private int _repeatsLeft;
         private int _currentFrameIndex = -1;
         private float _startTime;
 
@@ -21,6 +23,7 @@ namespace WizardDuel.Animation
         private void OnEnable()
         {
             _startTime = Time.time;
+            _repeatsLeft = RepeatLimit;
         }
 
         private void Start()
@@ -46,17 +49,21 @@ namespace WizardDuel.Animation
         {
             if (frame == _currentFrameIndex) return;
 
-            if (!Repeat && frame == 0 && _currentFrameIndex != -1)
+            if (!RepeatIndefinely && frame == 0 && _currentFrameIndex != -1)
             {
-                _currentFrameIndex = -1;
-                _renderer.sprite = null;
-                enabled = false;
+                _repeatsLeft -= 1;
+
+                if (_repeatsLeft == 0)
+                {
+                    _currentFrameIndex = -1;
+                    _renderer.sprite = null;
+                    enabled = false;
+                    return;
+                }
             }
-            else
-            {
-                _currentFrameIndex = frame;
-                _renderer.sprite = Sprites[frame];
-            }
+
+            _currentFrameIndex = frame;
+            _renderer.sprite = Sprites[frame];
         }
     }
 }
