@@ -12,6 +12,7 @@ namespace WizardDuel.Animation
         public AnimFrames[] GlyphCastFrames;
         public Sprite[] WinFrames;
         public Sprite[] LoseFrames;
+        public Sprite[] LevitateFrames;
 
         private SimpleSpriteAnimator _animator;
         private bool _animLocked = false;
@@ -24,7 +25,7 @@ namespace WizardDuel.Animation
 
         private void Start()
         {
-            _animator.SetSprites(IdleFrames);
+            StartIdle();
         } 
         #endregion
 
@@ -40,6 +41,17 @@ namespace WizardDuel.Animation
             StopAllCoroutines();
             _animLocked = true;
             _animator.SetSprites(LoseFrames);
+        }
+
+        public void PlayLevitateAnim()
+        {
+            StopAllCoroutines();
+            _animator.SetSprites(LevitateFrames);
+        }
+
+        public void StartIdle()
+        {
+            _animator.SetSprites(IdleFrames);
         }
 
         private void AddGlyph(int markIndex)

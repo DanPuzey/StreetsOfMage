@@ -41,6 +41,12 @@ namespace WizardDuel
         private void BeginCountdown()
         {
             SetWizardInputEnabled(false);
+
+            foreach (var w in Wizards)
+            {
+                w.Levitation.StartAnimation();
+            }
+
             Countdown.StartCountdown();
             MusicAudio.Stop();
         }

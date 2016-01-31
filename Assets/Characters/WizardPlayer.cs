@@ -12,6 +12,7 @@ namespace WizardDuel
         public SigilAnimations Sigil;
         public WizardAudio Audio;
         public SimpleSpriteAnimator Lightning;
+        public LevitateAnimation Levitation;
 
         [Header("Combos")]
         public ComboMatcher WinningCombo;
