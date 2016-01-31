@@ -2820,6 +2820,10 @@ Prefab:
       propertyPath: Sigil
       value: 
       objectReference: {fileID: 577388838}
+    - target: {fileID: 11496844, guid: 0fadac84c134a424192fe176661ee1bb, type: 2}
+      propertyPath: Audio
+      value: 
+      objectReference: {fileID: 1012237239}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0fadac84c134a424192fe176661ee1bb, type: 2}
   m_IsPrefabParent: 0
