@@ -1,9 +1,13 @@
 fileFormatVersion: 2
 guid: f3a7c00eb29589c49819b1903fb8008e
-timeCreated: 1454178518
+timeCreated: 1454246900
 licenseType: Pro
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: Lightning_Sheet_0
+    21300002: Lightning_Sheet_1
+    21300004: Lightning_Sheet_2
+    21300006: Lightning_Sheet_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,7 +42,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,7 +53,93 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: Lightning_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -20, y: 128}
+        - {x: -21, y: 127}
+        - {x: -21, y: 17}
+        - {x: -12, y: -46}
+        - {x: 9, y: -46}
+        - {x: 20, y: 66}
+        - {x: 20, y: 116}
+        - {x: 17, y: 128}
+    - name: Lightning_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13, y: 128}
+        - {x: -19, y: 117}
+        - {x: -21, y: 104}
+        - {x: -21, y: -33}
+        - {x: -20, y: -54}
+        - {x: 32, y: -54}
+        - {x: 32, y: 97}
+        - {x: 24, y: 128}
+    - name: Lightning_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 128}
+        - {x: -28, y: -55}
+        - {x: 7, y: -55}
+        - {x: 20, y: -46}
+        - {x: 20, y: 128}
+      - - {x: 18, y: -30}
+        - {x: 17, y: -33}
+        - {x: 17, y: -38}
+        - {x: 21, y: -38}
+        - {x: 23, y: -35}
+        - {x: 23, y: -31}
+        - {x: 21, y: -29}
+      - - {x: -32, y: 89}
+        - {x: -32, y: 74}
+        - {x: -31, y: 74}
+        - {x: -28, y: 75}
+        - {x: -28, y: 85}
+        - {x: -29, y: 89}
+    - name: Lightning_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -16, y: 128}
+        - {x: -18, y: 127}
+        - {x: -18, y: -11}
+        - {x: -14, y: -46}
+        - {x: 12, y: -46}
+        - {x: 23, y: 65}
+        - {x: 23, y: 116}
+        - {x: 20, y: 128}
     outline: []
   spritePackingTag: 
   userData: 

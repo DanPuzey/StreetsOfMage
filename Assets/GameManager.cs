@@ -94,6 +94,7 @@ namespace WizardDuel
                     wiz.Animations.PlayLoseAnim();
                     wiz.Audio.PlayDeath();
                     wiz.Sigil.SetStage(0);
+                    wiz.Lightning.enabled = true;
                 }
             }
 

@@ -11,6 +11,7 @@ namespace WizardDuel
         public WizardAnimations Animations;
         public SigilAnimations Sigil;
         public WizardAudio Audio;
+        public SimpleSpriteAnimator Lightning;
 
         [Header("Combos")]
         public ComboMatcher WinningCombo;
@@ -20,5 +21,10 @@ namespace WizardDuel
         public ComboMatcher IronBarCombo;
         public ComboMatcher KnockBackCombo;
         public ComboMatcher ReviveCombo;
+
+        private void Awake()
+        {
+            Lightning.enabled = false;
+        }
     }
 }

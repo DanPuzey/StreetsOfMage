@@ -1977,6 +1977,10 @@ Prefab:
       propertyPath: m_LocalPosition.x
       value: -4.75
       objectReference: {fileID: 0}
+    - target: {fileID: 11496844, guid: 0fadac84c134a424192fe176661ee1bb, type: 2}
+      propertyPath: Lightning
+      value: 
+      objectReference: {fileID: 1688989459}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0fadac84c134a424192fe176661ee1bb, type: 2}
   m_IsPrefabParent: 0
@@ -1984,6 +1988,83 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 449408, guid: 0fadac84c134a424192fe176661ee1bb, type: 2}
   m_PrefabInternal: {fileID: 396297863}
+--- !u!1 &411107732
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 411107733}
+  - 212: {fileID: 411107735}
+  - 114: {fileID: 411107734}
+  m_Layer: 0
+  m_Name: Lightning
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &411107733
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 411107732}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 376138173}
+  m_RootOrder: 1
+--- !u!114 &411107734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 411107732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 044303b8f0dd229448065d191bf60157, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sprites:
+  - {fileID: 21300000, guid: f3a7c00eb29589c49819b1903fb8008e, type: 3}
+  - {fileID: 21300002, guid: f3a7c00eb29589c49819b1903fb8008e, type: 3}
+  - {fileID: 21300004, guid: f3a7c00eb29589c49819b1903fb8008e, type: 3}
+  - {fileID: 21300006, guid: f3a7c00eb29589c49819b1903fb8008e, type: 3}
+  FramesPerSecond: 2
+  Repeat: 0
+--- !u!212 &411107735
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 411107732}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 0
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 2097808219
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
 --- !u!1 &413053148
 GameObject:
   m_ObjectHideFlags: 0
@@ -2264,6 +2345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sprites: []
   FramesPerSecond: 4
+  Repeat: 1
 --- !u!114 &613338496 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11467526, guid: 0fadac84c134a424192fe176661ee1bb,
@@ -2888,6 +2970,84 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Sprites: []
   FramesPerSecond: 4
+  Repeat: 1
+--- !u!1 &1688989457
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1688989458}
+  - 212: {fileID: 1688989460}
+  - 114: {fileID: 1688989459}
+  m_Layer: 0
+  m_Name: Lightning
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1688989458
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1688989457}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1123449162}
+  m_RootOrder: 1
+--- !u!114 &1688989459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1688989457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 044303b8f0dd229448065d191bf60157, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sprites:
+  - {fileID: 21300000, guid: f3a7c00eb29589c49819b1903fb8008e, type: 3}
+  - {fileID: 21300002, guid: f3a7c00eb29589c49819b1903fb8008e, type: 3}
+  - {fileID: 21300004, guid: f3a7c00eb29589c49819b1903fb8008e, type: 3}
+  - {fileID: 21300006, guid: f3a7c00eb29589c49819b1903fb8008e, type: 3}
+  FramesPerSecond: 4
+  Repeat: 0
+--- !u!212 &1688989460
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1688989457}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 0
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 2097808219
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
 --- !u!1001 &1694208512
 Prefab:
   m_ObjectHideFlags: 0
@@ -3092,6 +3252,10 @@ Prefab:
       propertyPath: Audio
       value: 
       objectReference: {fileID: 1012237239}
+    - target: {fileID: 11496844, guid: 0fadac84c134a424192fe176661ee1bb, type: 2}
+      propertyPath: Lightning
+      value: 
+      objectReference: {fileID: 411107734}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0fadac84c134a424192fe176661ee1bb, type: 2}
   m_IsPrefabParent: 0
