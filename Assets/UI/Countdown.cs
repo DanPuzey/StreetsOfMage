@@ -10,6 +10,7 @@ namespace WizardDuel.UI
     {
         public Sprite[] Sprites;
         public AudioClip[] Sounds;
+        public AudioClip CompleteSound;
         public float SecondsPerSprite = 1f;
 
         private SpriteRenderer _renderer;
@@ -44,6 +45,8 @@ namespace WizardDuel.UI
             }
 
             _renderer.sprite = null;
+            _audio.clip = CompleteSound;
+            _audio.Play();
 
             if (Completed != null)
             {

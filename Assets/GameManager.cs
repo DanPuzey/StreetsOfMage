@@ -40,8 +40,8 @@ namespace WizardDuel
 
         private void BeginCountdown()
         {
-            Countdown.StartCountdown();
             SetWizardInputEnabled(false);
+            Countdown.StartCountdown();
             MusicAudio.Stop();
         }
 
@@ -124,7 +124,7 @@ namespace WizardDuel
         {
             foreach (var w in Wizards)
             {
-                w.enabled = enabled;
+                w.Input.enabled = enabled;
             }
         }
     }
