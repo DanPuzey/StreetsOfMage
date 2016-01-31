@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using WizardDuel.Animation;
 using WizardDuel.Audio;
+using WizardDuel.Spells;
 
 namespace WizardDuel
 {
@@ -13,6 +14,7 @@ namespace WizardDuel
         public WizardAudio Audio;
         public SimpleSpriteAnimator Lightning;
         public LevitateAnimation Levitation;
+        public Bolt Bolt;
 
         [Header("Combos")]
         public ComboMatcher WinningCombo;
