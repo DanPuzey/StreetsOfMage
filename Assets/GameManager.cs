@@ -17,6 +17,7 @@ namespace WizardDuel
         public ComboDisplay WinningComboDisplay;
         public AudioSource MusicAudio;
         public AudioSource EndGameSound;
+        public Countdown Countdown;
 
         private int[] _wizardScores;
 
@@ -28,11 +29,20 @@ namespace WizardDuel
             {
                 w.WinningCombo.ComboCompleted += PlayerWins;
             }
+
+            Countdown.Completed += CountdownCompleted;
         }
 
         private void Start()
         {
+            Countdown.StartCountdown();
+            SetWizardInputEnabled(false);
+        }
+
+        private void CountdownCompleted(object sender, EventArgs e)
+        {
             SetNewWinningCombo();
+            SetWizardInputEnabled(true);
         }
 
         private void PlayerWins(object sender, EventArgs e)
@@ -64,10 +74,10 @@ namespace WizardDuel
 
         private void SetVictor(WizardPlayer victor)
         {
+            SetWizardInputEnabled(false);
+
             foreach (var wiz in Wizards)
             {
-                wiz.Input.enabled = false;
-            
                 if (wiz == victor)
                 {
                     wiz.Animations.PlayWinAnim();
@@ -101,6 +111,14 @@ namespace WizardDuel
 
             WinningComboDisplay.Combo = winningCombo;
             WinningComboDisplay.DrawCombo();
+        }
+
+        private void SetWizardInputEnabled(bool enabled)
+        {
+            foreach (var w in Wizards)
+            {
+                w.enabled = enabled;
+            }
         }
     }
 }
