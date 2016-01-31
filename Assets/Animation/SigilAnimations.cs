@@ -30,7 +30,7 @@ namespace WizardDuel.Animation
 
         private void SetCurrentStage()
         { 
-            _animator.Sprites = Stages[_currentStage].Frames;
+            _animator.SetSprites(Stages[_currentStage].Frames);
         }
     }
 }

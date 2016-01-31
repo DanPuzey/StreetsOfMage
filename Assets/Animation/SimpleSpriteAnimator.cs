@@ -5,7 +5,7 @@ namespace WizardDuel.Animation
     [RequireComponent(typeof(SpriteRenderer))]
     public class SimpleSpriteAnimator : MonoBehaviour
     {
-        public Sprite[] Sprites;
+        public Sprite[] StartingSprites;
         public int FramesPerSecond = 4;
         public bool RepeatIndefinely = true;
         public int RepeatLimit = 1;
@@ -15,9 +15,12 @@ namespace WizardDuel.Animation
         private int _currentFrameIndex = -1;
         private float _startTime;
 
+        private Sprite[] _currentSprites;
+
         private void Awake()
         {
             _renderer = GetComponent<SpriteRenderer>();
+            _currentSprites = StartingSprites ?? new Sprite[0];
         }
 
         private void OnEnable()
@@ -33,16 +36,23 @@ namespace WizardDuel.Animation
 
         private void Update()
         {
-            if (Sprites.Length == 0)
+            if (_currentSprites.Length == 0)
             {
                 _renderer.sprite = null;
             }
             else
             {
                 int elapsedFrames = (int)((Time.time - _startTime) * FramesPerSecond);
-                int currentFrame = elapsedFrames % Sprites.Length;
+                int currentFrame = elapsedFrames % _currentSprites.Length;
                 SetCurrentFrame(currentFrame);
             }
+        }
+
+        public void SetSprites(Sprite[] sprites)
+        {
+            _currentSprites = sprites;
+            _currentFrameIndex = -1;
+            _startTime = Time.time;
         }
 
         private void SetCurrentFrame(int frame)
@@ -63,7 +73,7 @@ namespace WizardDuel.Animation
             }
 
             _currentFrameIndex = frame;
-            _renderer.sprite = Sprites[frame];
+            _renderer.sprite = _currentSprites[frame];
         }
     }
 }
