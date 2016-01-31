@@ -14,6 +14,7 @@ namespace WizardDuel.Animation
         public Sprite[] LoseFrames;
 
         private SimpleSpriteAnimator _animator;
+        private bool _animLocked = false;
 
         #region MonoBehaviour methods
         private void Awake()
@@ -30,17 +31,24 @@ namespace WizardDuel.Animation
         public void PlayWinAnim()
         {
             StopAllCoroutines();
+            _animLocked = true;
             _animator.Sprites = WinFrames;
         }
 
         public void PlayLoseAnim()
         {
             StopAllCoroutines();
+            _animLocked = true;
             _animator.Sprites = LoseFrames;
         }
 
         private void AddGlyph(int markIndex)
         {
+            if (_animLocked)
+            {
+                return;
+            }
+
             StopAllCoroutines();
             StartCoroutine("ShowGlyphAnim", markIndex);
         }
