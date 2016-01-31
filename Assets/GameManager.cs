@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using WizardDuel.UI;
 
@@ -11,6 +12,7 @@ namespace WizardDuel
         public int AlphabetSize = 4;
         public int WinningComboMinSize = 6;
         public int WinningComboMaxSize = 16;
+        public float EndGamePauseDuration = 6f;
 
         [Header("Component references")]
         public WizardPlayer[] Wizards = new WizardPlayer[0];
@@ -19,6 +21,7 @@ namespace WizardDuel
         public AudioSource EndGameSound;
         public AudioSource SectionWinSound;
         public Countdown Countdown;
+        public ReadyScreen ReadyScreen;
 
         private int[] _wizardScores;
 
@@ -32,9 +35,26 @@ namespace WizardDuel
             }
 
             Countdown.Completed += CountdownCompleted;
+            ReadyScreen.Readied += ReadyComplete;
         }
 
         private void Start()
+        {
+            ShowReadyScreen();
+        }
+
+        private void ShowReadyScreen()
+        { 
+            foreach (var w in Wizards)
+            {
+                w.gameObject.SetActive(false);
+            }
+
+            SetWizardInputEnabled(false);
+            ReadyScreen.Show();
+        }
+
+        private void ReadyComplete(object sender, EventArgs e)
         {
             BeginCountdown();
         }
@@ -45,11 +65,11 @@ namespace WizardDuel
 
             foreach (var w in Wizards)
             {
+                w.gameObject.SetActive(true);
                 w.Levitation.StartAnimation();
             }
 
             Countdown.StartCountdown();
-            MusicAudio.Stop();
         }
 
         private void CountdownCompleted(object sender, EventArgs e)
@@ -108,6 +128,14 @@ namespace WizardDuel
 
             MusicAudio.Stop();
             EndGameSound.Play();
+
+            StartCoroutine("ShowReadyScreenAfterDelay");
+        }
+
+        private IEnumerator ShowReadyScreenAfterDelay()
+        {
+            yield return new WaitForSeconds(EndGamePauseDuration);
+            ShowReadyScreen();
         }
 
         private void SetNewWinningCombo()
