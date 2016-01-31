@@ -2033,9 +2033,9 @@ MonoBehaviour:
   - {fileID: 21300002, guid: f3a7c00eb29589c49819b1903fb8008e, type: 3}
   - {fileID: 21300004, guid: f3a7c00eb29589c49819b1903fb8008e, type: 3}
   - {fileID: 21300006, guid: f3a7c00eb29589c49819b1903fb8008e, type: 3}
-  FramesPerSecond: 2
-  RepeatIndefinely: 1
-  RepeatLimit: 1
+  FramesPerSecond: 20
+  RepeatIndefinely: 0
+  RepeatLimit: 2
 --- !u!212 &411107735
 SpriteRenderer:
   m_ObjectHideFlags: 0
