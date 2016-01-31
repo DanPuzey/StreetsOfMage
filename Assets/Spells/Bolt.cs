@@ -11,6 +11,10 @@ namespace WizardDuel.Spells
         public Vector3 EndPosition;
         public float TravelTime;
 
+        public AudioSource TargetAudio;
+        public AudioClip HitShieldSound;
+        public AudioClip HitOpponentSound;
+
         public bool OpponentIsShielded;
 
         private SpriteRenderer _renderer;
@@ -18,11 +22,12 @@ namespace WizardDuel.Spells
         private void Awake()
         {
             _renderer = GetComponent<SpriteRenderer>();
-            _renderer.enabled = false;
+            gameObject.SetActive(false);
         }
 
         public void Fire()
         {
+            gameObject.SetActive(true);
             StartCoroutine(ShootBolt());
         }
 
@@ -39,21 +44,29 @@ namespace WizardDuel.Spells
                 var position = Vector3.Lerp(StartPosition, EndPosition, lerp);
 
                 transform.position = position;
-                Debug.Break();
                 yield return null; 
             }
 
             if (OpponentIsShielded)
             {
+                TargetAudio.clip = HitShieldSound;
+                TargetAudio.Play();
+
                 if (HitShield != null) HitShield(this, EventArgs.Empty);
             }
             else
             {
+                TargetAudio.clip = HitOpponentSound;
+                TargetAudio.Play();
+
                 if (HitOpponent != null) HitOpponent(this, EventArgs.Empty);
             }
 
             _renderer.enabled = false;
+            gameObject.SetActive(false);
         }
+
+
 
         public event EventHandler HitShield;
         public event EventHandler HitOpponent;

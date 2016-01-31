@@ -124,6 +124,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11434078, guid: 494f3e5cd99167d4b9f5f890ee59e599, type: 2}
+      propertyPath: OpponentBolt
+      value: 
+      objectReference: {fileID: 1312346799}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 494f3e5cd99167d4b9f5f890ee59e599, type: 2}
   m_IsPrefabParent: 0
@@ -693,6 +697,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 129715882}
   m_RootOrder: 1
+--- !u!114 &1165766036 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11438866, guid: 494f3e5cd99167d4b9f5f890ee59e599,
+    type: 2}
+  m_PrefabInternal: {fileID: 13564925}
+  m_Script: {fileID: 11500000, guid: a7e3d7f387ec6cc4e83ac4c861ef33ff, type: 3}
 --- !u!1 &1246754828
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,9 +879,19 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11405528, guid: 7b1a97b48e573b84b83b91f6dcc663d7, type: 2}
+      propertyPath: OpponentBolt
+      value: 
+      objectReference: {fileID: 1165766036}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7b1a97b48e573b84b83b91f6dcc663d7, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1312346799 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11430972, guid: 7b1a97b48e573b84b83b91f6dcc663d7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1312346797}
+  m_Script: {fileID: 11500000, guid: a7e3d7f387ec6cc4e83ac4c861ef33ff, type: 3}
 --- !u!1 &1312649153
 GameObject:
   m_ObjectHideFlags: 0

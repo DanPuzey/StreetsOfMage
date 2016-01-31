@@ -13,6 +13,7 @@ namespace WizardDuel.Animation
         public Sprite[] WinFrames;
         public Sprite[] LoseFrames;
         public Sprite[] LevitateFrames;
+        public Sprite[] TakeDamageFrames;
 
         private SimpleSpriteAnimator _animator;
         private bool _animLocked = false;
@@ -49,6 +50,12 @@ namespace WizardDuel.Animation
             _animator.SetSprites(LevitateFrames);
         }
 
+        public void PlayDamageAnim()
+        {
+            StopAllCoroutines();
+            ShowTemporaryAnim(TakeDamageFrames);
+        }
+
         public void StartIdle()
         {
             _animator.SetSprites(IdleFrames);
@@ -62,12 +69,18 @@ namespace WizardDuel.Animation
             }
 
             StopAllCoroutines();
-            StartCoroutine("ShowGlyphAnim", markIndex);
+            ShowGlyphAnim(markIndex);
         }
 
-        private IEnumerator ShowGlyphAnim(int index)
+        private void ShowGlyphAnim(int index)
         {
-            _animator.SetSprites(GlyphCastFrames[index].Frames);
+            Sprite[] glyphFrames = GlyphCastFrames[index].Frames;
+            StartCoroutine("ShowTemporaryAnim", glyphFrames);
+        }
+
+        private IEnumerator ShowTemporaryAnim(Sprite[] frames)
+        {
+            _animator.SetSprites(frames);
             yield return new WaitForSeconds(0.8f);
             _animator.SetSprites(IdleFrames);
         }
