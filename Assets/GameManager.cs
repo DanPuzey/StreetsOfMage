@@ -96,7 +96,7 @@ namespace WizardDuel
 
             foreach (var w in Wizards)
             {
-                w.WinningCombo.Combo = winningCombo;
+                w.WinningCombo.SetCombo(winningCombo);
             }
 
             WinningComboDisplay.Combo = winningCombo;

@@ -5,20 +5,26 @@ namespace WizardDuel
 {
     public class ComboMatcher : MonoBehaviour
     {
-        public int[] Combo = { 1, 2, 3, 4 };
+        private int[] _combo = { 1, 2, 3, 4 };
 
         [Header("Behaviour")]
         public bool ResetOnMiss = true;
 
         private int _currentSymbolIndex = 0;
 
+        public void SetCombo(int[] combo)
+        {
+            _combo = combo;
+            Reset();
+        }
+
         public void AddGlyph(int markIndex)
         {
-            if (markIndex == Combo[_currentSymbolIndex])
+            if (markIndex == _combo[_currentSymbolIndex])
             {
                 _currentSymbolIndex++;
                 
-                if (_currentSymbolIndex >= Combo.Length)
+                if (_currentSymbolIndex >= _combo.Length)
                 {
                     CompleteCombo();
                 }
@@ -27,7 +33,7 @@ namespace WizardDuel
             {
                 Reset();
 
-                if (markIndex == Combo[_currentSymbolIndex])
+                if (markIndex == _combo[_currentSymbolIndex])
                 {
                     _currentSymbolIndex++;
                 }
