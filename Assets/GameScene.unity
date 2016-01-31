@@ -132,6 +132,18 @@ Prefab:
       propertyPath: Opponent
       value: 
       objectReference: {fileID: 635993083}
+    - target: {fileID: 11463744, guid: 494f3e5cd99167d4b9f5f890ee59e599, type: 2}
+      propertyPath: AxisDeadzone
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11417888, guid: 494f3e5cd99167d4b9f5f890ee59e599, type: 2}
+      propertyPath: ButtonName
+      value: joystick 2 button 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 11434078, guid: 494f3e5cd99167d4b9f5f890ee59e599, type: 2}
+      propertyPath: ButtonName
+      value: joystick 2 button 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 494f3e5cd99167d4b9f5f890ee59e599, type: 2}
   m_IsPrefabParent: 0
@@ -891,6 +903,18 @@ Prefab:
       propertyPath: Opponent
       value: 
       objectReference: {fileID: 1256358400}
+    - target: {fileID: 11486730, guid: 7b1a97b48e573b84b83b91f6dcc663d7, type: 2}
+      propertyPath: AxisDeadzone
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11405528, guid: 7b1a97b48e573b84b83b91f6dcc663d7, type: 2}
+      propertyPath: ButtonName
+      value: joystick 1 button 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11462578, guid: 7b1a97b48e573b84b83b91f6dcc663d7, type: 2}
+      propertyPath: ButtonName
+      value: joystick 1 button 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7b1a97b48e573b84b83b91f6dcc663d7, type: 2}
   m_IsPrefabParent: 0

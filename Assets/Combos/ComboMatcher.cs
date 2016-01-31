@@ -31,6 +31,8 @@ namespace WizardDuel
             }
             else if (ResetOnMiss && _currentSymbolIndex > 0)
             {
+                Debug.LogFormat("Combo expected {0} and got {1} - resetting", _combo[_currentSymbolIndex], markIndex);
+
                 ResetCombo();
 
                 if (markIndex == _combo[_currentSymbolIndex])
@@ -42,7 +44,6 @@ namespace WizardDuel
 
         private void ResetCombo()
         {
-            Debug.Log("COMBO RESET");
             _currentSymbolIndex = 0;
         }
 

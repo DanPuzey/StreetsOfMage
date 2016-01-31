@@ -130,12 +130,20 @@ namespace WizardDuel
             MusicAudio.Stop();
             EndGameSound.Play();
 
-            StartCoroutine("ShowReadyScreenAfterDelay");
+            StartCoroutine("ResetGameAfterDelay");
         }
 
-        private IEnumerator ShowReadyScreenAfterDelay()
+        private IEnumerator ResetGameAfterDelay()
         {
             yield return new WaitForSeconds(EndGamePauseDuration);
+
+            _wizardScores = new int[Wizards.Length];
+            foreach (var w in Wizards)
+            {
+                w.Sigil.SetStage(0);
+                w.Bolt.CurrentAmmo = w.Bolt.InitialAmmo;
+            }
+
             ShowReadyScreen();
         }
 

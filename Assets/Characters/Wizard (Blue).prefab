@@ -917,7 +917,7 @@ MonoBehaviour:
     Positive: 0
   - Name: Axis 6
     Positive: 1
-  AxisDeadzone: 0.2
+  AxisDeadzone: 0.6
   TargetRoot: {fileID: 187914}
 --- !u!114 &11465256
 MonoBehaviour:
