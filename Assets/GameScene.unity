@@ -454,7 +454,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 410100, guid: 4c34b9bb728fdcd4493f7afe8264581d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -7.51
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 410100, guid: 4c34b9bb728fdcd4493f7afe8264581d, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1270,13 +1270,13 @@ Camera:
   m_GameObject: {fileID: 2127676769}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0.019607844}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1
+    width: 0.71
     height: 1
   near clip plane: 0.3
   far clip plane: 1000

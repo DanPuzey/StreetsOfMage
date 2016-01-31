@@ -58,6 +58,7 @@ namespace WizardDuel.Animation
 
         public void StartIdle()
         {
+            _animLocked = false;
             _animator.SetSprites(IdleFrames);
         }
 

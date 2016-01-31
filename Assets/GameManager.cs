@@ -110,6 +110,7 @@ namespace WizardDuel
 
         private void SetVictor(WizardPlayer victor)
         {
+            WinningComboDisplay.Clear();
             SetWizardInputEnabled(false);
 
             foreach (var wiz in Wizards)
@@ -142,6 +143,7 @@ namespace WizardDuel
             {
                 w.Sigil.SetStage(0);
                 w.Bolt.CurrentAmmo = w.Bolt.InitialAmmo;
+                w.Animations.StartIdle();
             }
 
             ShowReadyScreen();

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace WizardDuel.UI
 {
@@ -10,10 +11,9 @@ namespace WizardDuel.UI
 
         public void DrawCombo()
         {
-            foreach (Transform c in transform)
-            {
-                Destroy(c.gameObject);
-            }
+            Clear();
+
+            var offset = Combo.Length * GlyphSpacing / 2;
 
             for (var i = 0; i < Combo.Length; i++)
             {
@@ -22,7 +22,17 @@ namespace WizardDuel.UI
 
                 var thisGlyph = Instantiate(glyphPrefab);
                 thisGlyph.transform.parent = transform;
-                thisGlyph.transform.localPosition = new Vector3(i * GlyphSpacing, 0, 0);
+
+                var xPosition = (i * GlyphSpacing) - offset;
+                thisGlyph.transform.localPosition = new Vector3(xPosition, 0, 0);
+            }
+        }
+
+        public void Clear()
+        {
+            foreach (Transform c in transform)
+            {
+                Destroy(c.gameObject);
             }
         }
     }
