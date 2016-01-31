@@ -17,6 +17,7 @@ namespace WizardDuel
         public ComboDisplay WinningComboDisplay;
         public AudioSource MusicAudio;
         public AudioSource EndGameSound;
+        public AudioSource SectionWinSound;
         public Countdown Countdown;
 
         private int[] _wizardScores;
@@ -27,7 +28,7 @@ namespace WizardDuel
 
             foreach (var w in Wizards)
             {
-                w.WinningCombo.ComboCompleted += PlayerWins;
+                w.WinningCombo.ComboCompleted += PlayerScores;
             }
 
             Countdown.Completed += CountdownCompleted;
@@ -58,7 +59,7 @@ namespace WizardDuel
             MusicAudio.Play();
         }
 
-        private void PlayerWins(object sender, EventArgs e)
+        private void PlayerScores(object sender, EventArgs e)
         {
             var c = sender as ComboMatcher;
             var winnerTransform = c.transform.parent.parent;
@@ -71,6 +72,7 @@ namespace WizardDuel
             {
                 winner.Sigil.SetStage(_wizardScores[index]);
                 SetNewWinningCombo();
+                SectionWinSound.Play();
             }
             else
             {
